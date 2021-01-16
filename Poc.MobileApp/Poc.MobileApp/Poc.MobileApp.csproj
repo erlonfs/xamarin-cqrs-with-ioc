@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
   </PropertyGroup>
 
@@ -17,5 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Poc.MobileApp.Domain\Poc.MobileApp.Domain.csproj" />
+    <ProjectReference Include="..\..\Poc.MobileApp.Infra\Poc.MobileApp.Infra.EF.csproj" />
   </ItemGroup>
 </Project>
