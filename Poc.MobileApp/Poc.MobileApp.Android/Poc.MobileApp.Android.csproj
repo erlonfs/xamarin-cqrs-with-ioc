@@ -89,6 +89,14 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Poc.MobileApp.Domain\Poc.MobileApp.Domain.csproj">
+      <Project>{f4482ae6-74ca-4c94-9676-9ff81b877fb9}</Project>
+      <Name>Poc.MobileApp.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Poc.MobileApp.Infra\Poc.MobileApp.Infra.EF.csproj">
+      <Project>{c1b31627-00a8-410e-bcf2-6217496e7209}</Project>
+      <Name>Poc.MobileApp.Infra.EF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Poc.MobileApp\Poc.MobileApp.csproj">
       <Project>{EE552EF0-5B53-4C04-9981-884C7738A158}</Project>
       <Name>Poc.MobileApp</Name>
@@ -97,7 +105,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" />
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionPocMobileAppAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

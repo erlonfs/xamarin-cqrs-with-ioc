@@ -2,7 +2,7 @@
 
 namespace Poc.MobileApp.Domain
 {
-	public class Pessoa
+	public class Pessoa : Entity<Guid>
 	{
 		public int Id { get; set; }
 		public string Nome { get; set; }

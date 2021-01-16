@@ -18,7 +18,6 @@ namespace Poc.MobileApp.Domain.Commands
 			{
 				Nome = command.Nome,
 				DataCriacao = command.DataCriacao,
-				Cpf = command.Cpf
 			};
 
 			await _pessoaRepository.AddAsync(pessoa);

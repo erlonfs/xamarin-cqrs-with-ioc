@@ -1,6 +1,9 @@
-﻿using System;
+﻿using CommonServiceLocator;
+using Poc.MobileApp.Core.Services;
+using Poc.MobileApp.Views;
+using Unity;
+using Unity.ServiceLocation;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Poc.MobileApp
 {
@@ -10,7 +13,14 @@ namespace Poc.MobileApp
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+			var container = new UnityContainer();
+
+			container.RegisterType<INumberProvider, NumberProvider>();
+
+			ServiceLocator.SetLocatorProvider(() => new UnityServiceLocator(container));
+
+			MainPage = new Login();
+
 		}
 
 		protected override void OnStart()
@@ -24,5 +34,7 @@ namespace Poc.MobileApp
 		protected override void OnResume()
 		{
 		}
+
+
 	}
 }
