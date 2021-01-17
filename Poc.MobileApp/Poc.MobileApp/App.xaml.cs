@@ -16,6 +16,7 @@ namespace Poc.MobileApp
 			var container = new UnityContainer();
 
 			container.RegisterType<INumberProvider, NumberProvider>();
+			container.RegisterType<INameProvider, NameProvider>();
 
 			ServiceLocator.SetLocatorProvider(() => new UnityServiceLocator(container));
 

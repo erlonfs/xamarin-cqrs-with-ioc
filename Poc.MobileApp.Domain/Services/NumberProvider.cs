@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Poc.MobileApp.Domain.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,7 +9,7 @@ namespace Poc.MobileApp.Core.Services
 	{
 		public int Next()
 		{
-			return 93;
+			return new Random().Next(10);
 		}
 	}
 }

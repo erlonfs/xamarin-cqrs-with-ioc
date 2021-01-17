@@ -10,16 +10,15 @@ namespace Poc.MobileApp
 {
 	public partial class LoginViewModel : ViewModel
 	{
-		private readonly INumberProvider _numberProvider;
+		private readonly INameProvider _nameProvider;
 
 		public string Login { get; set; }
 
-		public LoginViewModel(INumberProvider numberProvider)
+		public LoginViewModel(INameProvider nameProvider)
 		{
-			Login = "erlonfs";
-			_numberProvider = numberProvider;
+			_nameProvider = nameProvider;
 
-			Login = _numberProvider.Next().ToString();
+			Login = _nameProvider.Next();
 		}
 	}
 }
