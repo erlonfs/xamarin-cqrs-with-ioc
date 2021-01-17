@@ -8,7 +8,7 @@ namespace Poc.MobileApp.Droid.Providers
 {
 	class DroidDatabaseServicePathProvider : IDatabaseServicePathProvider
 	{
-		public string GetPath()
+		public string Get()
 		{
 			return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "applocaldb.db3");
 		}

@@ -6,13 +6,13 @@ using Xamarin.Forms.Xaml;
 namespace Poc.MobileApp.Views.Pessoa
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Criar : ContentPage
+	public partial class Consultar : ContentPage
 	{
-		public Criar()
+		public Consultar()
 		{
 			InitializeComponent();
 
-			var viewModel = ServiceLocator.Current.GetInstance<CriarViewModel>();
+			var viewModel = ServiceLocator.Current.GetInstance<ConsultarViewModel>();
 
 			BindingContext = viewModel;
 		}

@@ -1,7 +1,6 @@
 ﻿using Poc.MobileApp.Domain;
 using Poc.MobileApp.Domain.Commands;
 using System;
-using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
 namespace Poc.MobileApp.ViewModels.Pessoa
@@ -9,33 +8,37 @@ namespace Poc.MobileApp.ViewModels.Pessoa
 	public partial class CriarViewModel : ViewModel
 	{
 		private readonly ICommandDispatcher _commandDispatcher;
-
+		public Command Criar { get; set; }
 		public string Nome { get; set; }
 		public string Cpf { get; set; }
-
-		public Command Criar { get; set; }
 
 		public CriarViewModel(ICommandDispatcher commandDispatcher)
 		{
 			_commandDispatcher = commandDispatcher;
-
 			Criar = new Command(CriarCommandAction);
-
 		}
 
 		private async void CriarCommandAction(object obj)
 		{
-			var pessoaId = Guid.NewGuid();
-
 			try
 			{
+				var pessoaId = Guid.NewGuid();
+
 				var command = new CriarPessoaCommand(pessoaId, Nome, Cpf);
-				await _commandDispatcher.DispatchAsync(command);
+
+				await _commandDispatcher.DispatchAsync(command); 
+				
+				await App.Current.MainPage.DisplayAlert("Sucesso", "Pessoa criada com sucesso", "Ok");
+
+
 			}
 			catch (BusinessException e)
 			{
-				BusinessMessage = e.Message;
-				base.OnPropertyChanged(nameof(BusinessMessage));
+				await App.Current.MainPage.DisplayAlert("Verifique", e.Message, "Ok");
+			}
+			catch (Exception e)
+			{
+				await App.Current.MainPage.DisplayAlert("Ocorreu um erro", e.Message, "Ok");
 			}
 		}
 

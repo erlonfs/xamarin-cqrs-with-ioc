@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Poc.MobileApp.Views.Pessoa.Consultar"
+			 Title="Consultar">
+	<ContentPage.Content>
+
+
+		<Grid Margin="0" Padding="5,0" ColumnSpacing="0" RowSpacing="5">
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+
+			<Button Grid.Row="0" Text="Buscar" Command="{Binding Consultar}"/>
+
+			<ListView Grid.Row="1"
+                  x:Name="PessoasListView"
+                  ItemsSource="{Binding Pessoas}"
+                  CachingStrategy="RecycleElement">
+
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<TextCell Text="{Binding Nome}" Detail="{Binding Cpf}" />
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+
+			<ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
+
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

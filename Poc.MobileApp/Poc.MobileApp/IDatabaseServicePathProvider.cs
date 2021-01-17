@@ -2,6 +2,6 @@
 {
 	public interface IDatabaseServicePathProvider
 	{
-		string GetPath();
+		string Get();
 	}
 }

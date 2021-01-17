@@ -94,7 +94,7 @@
       <Project>{f4482ae6-74ca-4c94-9676-9ff81b877fb9}</Project>
       <Name>Poc.MobileApp.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Poc.MobileApp.Infra\Poc.MobileApp.Infra.EF.csproj">
+    <ProjectReference Include="..\..\Poc.MobileApp.Infra.EF\Poc.MobileApp.Infra.EF.csproj">
       <Project>{c1b31627-00a8-410e-bcf2-6217496e7209}</Project>
       <Name>Poc.MobileApp.Infra.EF</Name>
     </ProjectReference>
@@ -106,7 +106,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadUnhandledDeviceExceptionPocMobileAppAndroidHideInfoBar="True" TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionPocMobileAppAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionPocMobileAppAndroidHideInfoBar="True" TriggeredFromHotReload="False" XamarinHotReloadUnhandledDeviceExceptionPocMobileAppAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

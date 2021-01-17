@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poc.MobileApp", "Poc.Mobile
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poc.MobileApp.Domain", "Poc.MobileApp.Domain\Poc.MobileApp.Domain.csproj", "{F4482AE6-74CA-4C94-9676-9FF81B877FB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poc.MobileApp.Infra.EF", "Poc.MobileApp.Infra\Poc.MobileApp.Infra.EF.csproj", "{C1B31627-00A8-410E-BCF2-6217496E7209}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poc.MobileApp.Infra.EF", "Poc.MobileApp.Infra.EF\Poc.MobileApp.Infra.EF.csproj", "{C1B31627-00A8-410E-BCF2-6217496E7209}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poc.MobileApp.Infra.Dapper", "Poc.MobileApp.Infra.Dapper\Poc.MobileApp.Infra.Dapper.csproj", "{9AB5C593-9BE1-44B7-95A3-674B27DC22AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{C1B31627-00A8-410E-BCF2-6217496E7209}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1B31627-00A8-410E-BCF2-6217496E7209}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1B31627-00A8-410E-BCF2-6217496E7209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AB5C593-9BE1-44B7-95A3-674B27DC22AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AB5C593-9BE1-44B7-95A3-674B27DC22AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AB5C593-9BE1-44B7-95A3-674B27DC22AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AB5C593-9BE1-44B7-95A3-674B27DC22AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
