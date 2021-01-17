@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Poc.MobileApp.Domain;
-using System;
 using System.Linq;
 
 namespace Poc.MobileApp.Infra.EF
@@ -11,11 +10,13 @@ namespace Poc.MobileApp.Infra.EF
 
 		public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
 		{
+			Database.EnsureCreated();
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			AddMappingsDynamically(modelBuilder);
+
 		}
 
 		private void AddMappingsDynamically(ModelBuilder modelBuilder)

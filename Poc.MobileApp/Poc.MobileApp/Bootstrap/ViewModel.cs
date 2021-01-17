@@ -6,7 +6,9 @@ namespace Poc.MobileApp
 {
 	public abstract class ViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+		public string BusinessMessage { get; set; }
+
+		public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

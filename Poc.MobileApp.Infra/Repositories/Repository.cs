@@ -10,15 +10,30 @@ namespace Poc.MobileApp.Infra.EF.Repositories
 	public class Repository<TEntity> where TEntity : Entity<Guid>
 	{
 		private DbSet<TEntity> _dbSet;
+		private readonly DbContext _context;
 
 		protected Repository(DbContext context)
 		{
 			_dbSet = context.Set<TEntity>();
+			_context = context;
 		}
 
 		public async Task AddAsync(TEntity entity)
 		{
 			await _dbSet.AddAsync(entity);
+
+
+			try
+			{
+				_context.SaveChanges();
+			}
+			catch (Exception e)
+			{
+
+				throw;
+			}
+			
+
 		}
 
 		public async Task<TEntity> GetByEntityIdAsync(Guid entityId)

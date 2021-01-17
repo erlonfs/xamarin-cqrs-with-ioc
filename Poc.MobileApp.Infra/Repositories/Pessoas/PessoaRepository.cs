@@ -3,13 +3,13 @@ using Poc.MobileApp.Domain;
 using Poc.MobileApp.Domain.Repositories;
 using System.Threading.Tasks;
 
-namespace Poc.MobileApp.Infra.EF.Repositories.PessoasFisicas
+namespace Poc.MobileApp.Infra.EF.Repositories.Pessoas
 {
-	public class PessoaFisicaRepository : Repository<Pessoa>,  IPessoaRepository
+	public class PessoaRepository : Repository<Pessoa>, IPessoaRepository
 	{
 		private AppDbContext _context;
 
-		public PessoaFisicaRepository(AppDbContext context) : base(context)
+		public PessoaRepository(AppDbContext context) : base(context)
 		{
 			_context = context;
 		}
@@ -17,6 +17,7 @@ namespace Poc.MobileApp.Infra.EF.Repositories.PessoasFisicas
 		public async Task<Pessoa> ObterPorCpfAsync(string cpf)
 		{
 			return await _context.Pessoa.FirstOrDefaultAsync(x => x.Cpf == cpf);
+
 		}
 	}
 }

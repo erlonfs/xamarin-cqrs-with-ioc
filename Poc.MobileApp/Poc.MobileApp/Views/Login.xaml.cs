@@ -20,6 +20,12 @@ namespace Poc.MobileApp.Views
 			var viewModel = ServiceLocator.Current.GetInstance<LoginViewModel>();
 
 			BindingContext = viewModel;
+
+		}
+
+		public async Task diplayAlert()
+		{
+			await DisplayActionSheet("Question?", "Would you like to play a game", "Yes", "No");
 		}
 	}
 }

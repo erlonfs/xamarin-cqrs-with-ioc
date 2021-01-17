@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Poc.MobileApp.Views.Pessoa.Criar"
+			 Title="Criar">
+	<ContentPage.Content>
+
+
+		<Grid Margin="0" Padding="5,0" ColumnSpacing="0" RowSpacing="5">
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+
+			<Entry Grid.Row="0" Keyboard="Text" Placeholder="Nome" Text="{Binding Nome}" />
+
+			<Entry Grid.Row="1" Keyboard="Numeric" Placeholder="Cpf" Text="{Binding Cpf}" />
+
+			<Button Grid.Row="2" Text="Criar" Command="{Binding Criar}"/>
+
+			<Label Grid.Row="3" TextColor="Red" Text="{Binding BusinessMessage}"/>
+
+			<ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
+
+		</Grid>
+
+
+
+	</ContentPage.Content>
+</ContentPage>

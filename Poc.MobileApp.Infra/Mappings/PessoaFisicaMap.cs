@@ -13,6 +13,7 @@ namespace Poc.MobileApp.Infra.EF.Mappings
 			builder.HasKey(x => x.Id);
 			builder.Property(x => x.Id).ValueGeneratedOnAdd();
 
+			builder.Property(x => x.EntityId);
 			builder.Property(x => x.DataCriacao);
 			builder.Property(x => x.Nome);
 			builder.Property(x => x.Cpf);

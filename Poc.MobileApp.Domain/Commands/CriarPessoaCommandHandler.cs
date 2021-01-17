@@ -1,4 +1,6 @@
-﻿using Poc.MobileApp.Domain.Repositories;
+﻿using Poc.MobileApp.Core.Services;
+using Poc.MobileApp.Domain.Repositories;
+using System;
 using System.Threading.Tasks;
 
 namespace Poc.MobileApp.Domain.Commands
@@ -14,14 +16,18 @@ namespace Poc.MobileApp.Domain.Commands
 
 		public async Task HandleAsync(CriarPessoaCommand command)
 		{
+			var pessoaExistentePorCpf = await _pessoaRepository.ObterPorCpfAsync(command.Cpf);
+			if (pessoaExistentePorCpf != null) throw new PessoaJaExistenteParaCpfException(pessoaExistentePorCpf.Nome, pessoaExistentePorCpf.Cpf);
+
 			var pessoa = new Pessoa
 			{
+				EntityId = command.EntityId,
 				Nome = command.Nome,
 				DataCriacao = command.DataCriacao,
+				Cpf = command.Cpf
 			};
 
 			await _pessoaRepository.AddAsync(pessoa);
-
 		}
 	}
 }
