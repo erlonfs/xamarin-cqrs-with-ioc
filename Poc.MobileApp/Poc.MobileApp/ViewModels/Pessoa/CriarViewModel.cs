@@ -5,19 +5,22 @@ using Xamarin.Forms;
 
 namespace Poc.MobileApp.ViewModels.Pessoa
 {
-	public partial class CriarViewModel : ViewModel
+
+	public partial class CriarViewModel : BaseViewModel
 	{
 		private readonly ICommandDispatcher _commandDispatcher;
 		private readonly IUnitOfWork _unitOfWork;
+		private readonly INavigator _navigator;
 
 		public Command Criar { get; set; }
 		public string Nome { get; set; }
 		public string Cpf { get; set; }
 
-		public CriarViewModel(ICommandDispatcher commandDispatcher, IUnitOfWork unitOfWork)
+		public CriarViewModel(ICommandDispatcher commandDispatcher, IUnitOfWork unitOfWork, INavigator navigator)
 		{
 			_commandDispatcher = commandDispatcher;
 			_unitOfWork = unitOfWork;
+			_navigator = navigator;
 
 			Criar = new Command(CriarCommandAction);
 		}
@@ -35,6 +38,8 @@ namespace Poc.MobileApp.ViewModels.Pessoa
 				await _unitOfWork.CommitAsync();
 
 				await App.Current.MainPage.DisplayAlert("Sucesso", "Pessoa criada com sucesso", "Ok");
+
+				await _navigator.PopAsync();
 
 
 			}

@@ -12,9 +12,6 @@ namespace Poc.MobileApp.Views.Pessoa
 		{
 			InitializeComponent();
 
-			var viewModel = ServiceLocator.Current.GetInstance<CriarViewModel>();
-
-			BindingContext = viewModel;
 		}
 	}
 }

@@ -1,30 +1,30 @@
 ﻿using Poc.MobileApp.Domain;
-using Poc.MobileApp.Domain.Commands;
 using Poc.MobileApp.Domain.Queries;
 using Poc.MobileApp.Domain.Queries.Pessoa;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Poc.MobileApp.ViewModels.Pessoa
 {
-	public partial class ConsultarViewModel : ViewModel
+	public partial class ConsultarViewModel : BaseViewModel
 	{
 		private readonly IQueryExecutor _queryExecutor;
-
-		public Command Consultar { get; set; }
+		private readonly INavigator _navigator;
 
 		public ObservableCollection<ConsultaDto> Pessoas { get; set; } = new ObservableCollection<ConsultaDto>();
-		
 
-		public ConsultarViewModel(IQueryExecutor queryExecutor)
+		public ConsultarViewModel(IQueryExecutor queryExecutor, INavigator navigator)
 		{
-			Consultar = new Command(ConsultarAction);
 			_queryExecutor = queryExecutor;
+			_navigator = navigator;
+
+			Consultar.Execute(null);
 		}
 
-		private async void ConsultarAction(object obj)
+		public ICommand Consultar => new Command(async () =>
 		{
 			try
 			{
@@ -41,7 +41,7 @@ namespace Poc.MobileApp.ViewModels.Pessoa
 			{
 				await App.Current.MainPage.DisplayAlert("Ocorreu um erro", e.Message, "Ok");
 			}
-		}
+		});
 
 	}
 }

@@ -10,12 +10,9 @@
 
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
 
-			<Button Grid.Row="0" Text="Buscar" Command="{Binding Consultar}"/>
-
-			<ListView Grid.Row="1"
+			<ListView Grid.Row="0"
                   x:Name="PessoasListView"
                   ItemsSource="{Binding Pessoas}"
                   CachingStrategy="RecycleElement">

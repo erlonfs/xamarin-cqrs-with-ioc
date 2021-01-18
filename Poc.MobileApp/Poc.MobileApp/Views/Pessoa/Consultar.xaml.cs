@@ -11,10 +11,6 @@ namespace Poc.MobileApp.Views.Pessoa
 		public Consultar()
 		{
 			InitializeComponent();
-
-			var viewModel = ServiceLocator.Current.GetInstance<ConsultarViewModel>();
-
-			BindingContext = viewModel;
 		}
 	}
 }
