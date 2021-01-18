@@ -36,7 +36,6 @@ namespace Poc.MobileApp.ViewModels.Pessoa
 					Pessoas.Add(item);
 				}
 
-
 			}
 			catch (Exception e)
 			{

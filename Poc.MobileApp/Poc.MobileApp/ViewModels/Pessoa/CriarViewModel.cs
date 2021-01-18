@@ -8,13 +8,17 @@ namespace Poc.MobileApp.ViewModels.Pessoa
 	public partial class CriarViewModel : ViewModel
 	{
 		private readonly ICommandDispatcher _commandDispatcher;
+		private readonly IUnitOfWork _unitOfWork;
+
 		public Command Criar { get; set; }
 		public string Nome { get; set; }
 		public string Cpf { get; set; }
 
-		public CriarViewModel(ICommandDispatcher commandDispatcher)
+		public CriarViewModel(ICommandDispatcher commandDispatcher, IUnitOfWork unitOfWork)
 		{
 			_commandDispatcher = commandDispatcher;
+			_unitOfWork = unitOfWork;
+
 			Criar = new Command(CriarCommandAction);
 		}
 
@@ -26,8 +30,10 @@ namespace Poc.MobileApp.ViewModels.Pessoa
 
 				var command = new CriarPessoaCommand(pessoaId, Nome, Cpf);
 
-				await _commandDispatcher.DispatchAsync(command); 
-				
+				await _commandDispatcher.DispatchAsync(command);
+
+				await _unitOfWork.CommitAsync();
+
 				await App.Current.MainPage.DisplayAlert("Sucesso", "Pessoa criada com sucesso", "Ok");
 
 

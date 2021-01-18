@@ -17,7 +17,6 @@ namespace Poc.MobileApp.Infra.EF.Repositories.Pessoas
 		public async Task<Pessoa> ObterPorCpfAsync(string cpf)
 		{
 			return await _context.Pessoa.FirstOrDefaultAsync(x => x.Cpf == cpf);
-
 		}
 	}
 }

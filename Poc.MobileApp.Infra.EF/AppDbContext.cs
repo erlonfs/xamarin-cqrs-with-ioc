@@ -16,7 +16,6 @@ namespace Poc.MobileApp.Infra.EF
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			AddMappingsDynamically(modelBuilder);
-
 		}
 
 		private void AddMappingsDynamically(ModelBuilder modelBuilder)

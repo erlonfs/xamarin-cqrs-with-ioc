@@ -28,6 +28,8 @@ namespace Poc.MobileApp
 
 			builder.RegisterType<CommandDispatcher>().As<ICommandDispatcher>();
 			builder.RegisterType<QueryExecutor>().As<IQueryExecutor>();
+			builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
+
 			builder.RegisterType<NumberProvider>().As<INumberProvider>();
 			builder.RegisterType<NameProvider>().As<INameProvider>();
 			builder.RegisterType<PessoaRepository>().As<IPessoaRepository>();
@@ -47,7 +49,7 @@ namespace Poc.MobileApp
 			var conn = new SqliteConnection(@$"Data Source={dbPath}\\mobileApp2021.db");
 
 			var options = new DbContextOptionsBuilder<AppDbContext>().UseSqlite(conn).Options;
-			builder.RegisterType<AppDbContext>().AsSelf().WithParameter("options", options);
+			builder.RegisterType<AppDbContext>().AsSelf().WithParameter("options", options).InstancePerLifetimeScope();
 			builder.Register(c => new MobileAppConnection(conn)).As<AppConnection>();
 
 			var container = builder.Build();
