@@ -16,7 +16,7 @@ namespace Poc.MobileApp.Infra.Dapper.Queries.Pessoa
 
 		public IEnumerable<ConsultaDto> ExecuteAsync(ConsultaQuery query)
 		{
-			var sql = @"SELECT EntityId, Nome, Cpf, DataCriacao FROM Pessoa";
+			var sql = @"SELECT Nome, Cpf, DataCriacao FROM Pessoa";
 
 			using (var conn = _appConnection.GetDBConnection())
 			{

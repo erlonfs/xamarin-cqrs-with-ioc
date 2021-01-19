@@ -8,7 +8,7 @@ namespace Poc.MobileApp.Infra.EF.Mappings
 	{
 		public void Configure(EntityTypeBuilder<Pessoa> builder)
 		{
-			builder.ToTable("Pessoa", "dm");
+			builder.ToTable("Pessoa");
 
 			builder.HasKey(x => x.Id);
 			builder.Property(x => x.Id).ValueGeneratedOnAdd();

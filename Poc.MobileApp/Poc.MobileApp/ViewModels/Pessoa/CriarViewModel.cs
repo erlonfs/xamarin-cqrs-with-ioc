@@ -16,6 +16,7 @@ namespace Poc.MobileApp.ViewModels.Pessoa
 		public string Nome { get; set; }
 		public string Cpf { get; set; }
 
+
 		public CriarViewModel(ICommandDispatcher commandDispatcher, IUnitOfWork unitOfWork, INavigator navigator)
 		{
 			_commandDispatcher = commandDispatcher;
@@ -34,7 +35,7 @@ namespace Poc.MobileApp.ViewModels.Pessoa
 				await _commandDispatcher.DispatchAsync(command);
 				await _unitOfWork.CommitAsync();
 
-			}, 
+			},
 
 			async () => { await _navigator.PopAsync(); });
 

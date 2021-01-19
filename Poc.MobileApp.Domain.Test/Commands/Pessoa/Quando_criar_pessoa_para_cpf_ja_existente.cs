@@ -32,7 +32,7 @@ namespace Poc.MobileApp.Domain.Test.Commands.Pessoa
 		}
 
 		[Fact]
-		public async Task Deve_salvar()
+		public async Task Deve_lancar_erro()
 		{
 			try
 			{
