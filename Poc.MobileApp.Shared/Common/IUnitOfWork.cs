@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Poc.MobileApp
+namespace Poc.MobileApp.Shared.Common
 {
 	public interface IUnitOfWork
 	{

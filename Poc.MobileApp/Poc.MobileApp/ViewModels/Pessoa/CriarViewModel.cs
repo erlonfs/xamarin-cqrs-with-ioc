@@ -1,4 +1,5 @@
 ﻿using Poc.MobileApp.Domain.Commands;
+using Poc.MobileApp.Shared.Common;
 using Poc.MobileApp.Shared.Cqrs;
 using System;
 using Xamarin.Forms;

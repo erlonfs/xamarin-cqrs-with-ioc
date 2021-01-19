@@ -1,7 +1,4 @@
-﻿using Poc.MobileApp.Domain.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
 namespace Poc.MobileApp.Core.Services
 {

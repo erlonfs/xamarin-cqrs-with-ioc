@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Poc.MobileApp.Infra.EF;
+using Poc.MobileApp.Shared.Common;
 using System;
 using System.Linq;
 using System.Threading.Tasks;

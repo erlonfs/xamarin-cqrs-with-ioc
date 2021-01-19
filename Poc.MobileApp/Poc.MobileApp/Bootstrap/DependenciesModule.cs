@@ -6,6 +6,7 @@ using Poc.MobileApp.Domain.Repositories;
 using Poc.MobileApp.Infra.Dapper;
 using Poc.MobileApp.Infra.EF;
 using Poc.MobileApp.Infra.EF.Repositories.Pessoas;
+using Poc.MobileApp.Shared.Common;
 using Poc.MobileApp.Shared.Cqrs;
 using Xamarin.Forms;
 
@@ -35,7 +36,6 @@ namespace Poc.MobileApp
 			var options = new DbContextOptionsBuilder<AppDbContext>().UseSqlite(conn).Options;
 			builder.RegisterType<AppDbContext>().AsSelf().WithParameter("options", options).InstancePerLifetimeScope();
 			builder.Register(c => new MobileAppConnection(conn)).As<AppConnection>();
-
 
 			builder.RegisterType<ViewFactory>().As<IViewFactory>().SingleInstance();
 			builder.RegisterType<Navigator>().As<INavigator>().SingleInstance();

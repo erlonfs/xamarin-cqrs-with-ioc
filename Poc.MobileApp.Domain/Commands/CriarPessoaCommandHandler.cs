@@ -1,7 +1,5 @@
-﻿using Poc.MobileApp.Core.Services;
-using Poc.MobileApp.Domain.Repositories;
+﻿using Poc.MobileApp.Domain.Repositories;
 using Poc.MobileApp.Shared.Cqrs;
-using System;
 using System.Threading.Tasks;
 
 namespace Poc.MobileApp.Domain.Commands

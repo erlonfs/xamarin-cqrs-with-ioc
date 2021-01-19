@@ -1,6 +1,4 @@
-﻿using CommonServiceLocator;
-using Poc.MobileApp.ViewModels.Pessoa;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Poc.MobileApp.Views.Pessoa
