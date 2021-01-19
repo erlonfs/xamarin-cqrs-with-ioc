@@ -1,4 +1,6 @@
-﻿namespace Poc.MobileApp.Domain.Commands
+﻿using Poc.MobileApp.Shared.Common;
+
+namespace Poc.MobileApp.Domain.Commands
 {
 	public class PessoaJaExistenteParaCpfException : BusinessException
 	{

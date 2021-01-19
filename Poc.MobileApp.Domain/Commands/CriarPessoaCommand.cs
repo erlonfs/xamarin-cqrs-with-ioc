@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Poc.MobileApp.Shared.Cqrs;
+using System;
 
 namespace Poc.MobileApp.Domain.Commands
 {

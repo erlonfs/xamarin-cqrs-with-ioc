@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using Poc.MobileApp.Shared.Data;
+using System.Threading.Tasks;
 
 namespace Poc.MobileApp.Domain.Repositories
 {

@@ -1,6 +1,6 @@
 ﻿using Dapper;
 using Microsoft.Data.Sqlite;
-using Poc.MobileApp.Domain.Queries;
+using Poc.MobileApp.Shared.Data;
 using System.Data;
 using System.Data.SqlClient;
 

@@ -1,5 +1,5 @@
-﻿using Poc.MobileApp.Domain;
-using Poc.MobileApp.Domain.Commands;
+﻿using Poc.MobileApp.Domain.Commands;
+using Poc.MobileApp.Shared.Cqrs;
 using System;
 using Xamarin.Forms;
 
@@ -12,7 +12,6 @@ namespace Poc.MobileApp.ViewModels.Pessoa
 		private readonly IUnitOfWork _unitOfWork;
 		private readonly INavigator _navigator;
 
-		public Command Criar { get; set; }
 		public string Nome { get; set; }
 		public string Cpf { get; set; }
 
@@ -21,37 +20,24 @@ namespace Poc.MobileApp.ViewModels.Pessoa
 			_commandDispatcher = commandDispatcher;
 			_unitOfWork = unitOfWork;
 			_navigator = navigator;
-
-			Criar = new Command(CriarCommandAction);
 		}
 
-		private async void CriarCommandAction(object obj)
+
+		public Command Criar => new Command(async () =>
 		{
-			try
+			await ExecuteWithSafety(async () =>
 			{
 				var pessoaId = Guid.NewGuid();
-
 				var command = new CriarPessoaCommand(pessoaId, Nome, Cpf);
 
 				await _commandDispatcher.DispatchAsync(command);
-
 				await _unitOfWork.CommitAsync();
 
-				await App.Current.MainPage.DisplayAlert("Sucesso", "Pessoa criada com sucesso", "Ok");
+			}, 
 
-				await _navigator.PopAsync();
+			async () => { await _navigator.PopAsync(); });
 
-
-			}
-			catch (BusinessException e)
-			{
-				await App.Current.MainPage.DisplayAlert("Verifique", e.Message, "Ok");
-			}
-			catch (Exception e)
-			{
-				await App.Current.MainPage.DisplayAlert("Ocorreu um erro", e.Message, "Ok");
-			}
-		}
+		});
 
 	}
 }

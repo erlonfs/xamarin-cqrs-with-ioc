@@ -1,4 +1,4 @@
-﻿namespace Poc.MobileApp.Domain.Queries
+﻿namespace Poc.MobileApp.Shared.Data
 {
 	public class PaginacaoInfo
 	{

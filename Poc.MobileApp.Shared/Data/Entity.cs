@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Poc.MobileApp.Domain
+namespace Poc.MobileApp.Shared.Data
 {
 	public class Entity<TId> : IEquatable<Entity<TId>>
 	{

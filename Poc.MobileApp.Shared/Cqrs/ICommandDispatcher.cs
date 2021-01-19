@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Poc.MobileApp.Domain.Commands
+namespace Poc.MobileApp.Shared.Cqrs
 {
 	public interface ICommandDispatcher
 	{

@@ -1,7 +1,6 @@
 ﻿using Dapper;
-using Poc.MobileApp.Domain.Queries;
 using Poc.MobileApp.Domain.Queries.Pessoa;
-using System;
+using Poc.MobileApp.Shared.Cqrs;
 using System.Collections.Generic;
 
 namespace Poc.MobileApp.Infra.Dapper.Queries.Pessoa

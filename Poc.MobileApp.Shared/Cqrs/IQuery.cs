@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Poc.MobileApp.Domain.Queries
+namespace Poc.MobileApp.Shared.Cqrs
 {
 	public interface IQuery<TResult>
 	{

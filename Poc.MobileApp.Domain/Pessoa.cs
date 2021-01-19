@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Poc.MobileApp.Shared.Data;
+using System;
 
 namespace Poc.MobileApp.Domain
 {

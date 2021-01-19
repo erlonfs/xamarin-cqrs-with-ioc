@@ -2,12 +2,11 @@
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Poc.MobileApp.Domain;
-using Poc.MobileApp.Domain.Commands;
-using Poc.MobileApp.Domain.Queries;
 using Poc.MobileApp.Domain.Repositories;
 using Poc.MobileApp.Infra.Dapper;
 using Poc.MobileApp.Infra.EF;
 using Poc.MobileApp.Infra.EF.Repositories.Pessoas;
+using Poc.MobileApp.Shared.Cqrs;
 using Xamarin.Forms;
 
 namespace Poc.MobileApp

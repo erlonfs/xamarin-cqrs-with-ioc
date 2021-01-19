@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Poc.MobileApp.Domain.Repositories
+namespace Poc.MobileApp.Shared.Data
 {
 	public interface IRepository<T>
 	{

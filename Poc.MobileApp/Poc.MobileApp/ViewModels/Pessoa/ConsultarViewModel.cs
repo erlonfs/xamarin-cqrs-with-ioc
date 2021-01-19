@@ -1,10 +1,7 @@
-﻿using Poc.MobileApp.Domain;
-using Poc.MobileApp.Domain.Queries;
-using Poc.MobileApp.Domain.Queries.Pessoa;
-using System;
+﻿using Poc.MobileApp.Domain.Queries.Pessoa;
+using Poc.MobileApp.Shared.Cqrs;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Poc.MobileApp.ViewModels.Pessoa
@@ -24,10 +21,10 @@ namespace Poc.MobileApp.ViewModels.Pessoa
 			Consultar.Execute(null);
 		}
 
-		public ICommand Consultar => new Command(async () =>
+		public Command Consultar => new Command(async () =>
 		{
-			try
-			{
+			await QueryWithSafety(async () => {
+
 				var query = new ConsultaQuery();
 				var result = await _queryExecutor.ExecuteAsync<ConsultaQuery, IEnumerable<ConsultaDto>>(query);
 
@@ -36,11 +33,8 @@ namespace Poc.MobileApp.ViewModels.Pessoa
 					Pessoas.Add(item);
 				}
 
-			}
-			catch (Exception e)
-			{
-				await App.Current.MainPage.DisplayAlert("Ocorreu um erro", e.Message, "Ok");
-			}
+			});
+
 		});
 
 	}

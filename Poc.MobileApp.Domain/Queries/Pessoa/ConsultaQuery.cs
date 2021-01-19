@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Poc.MobileApp.Shared.Cqrs;
+using System;
 using System.Collections.Generic;
 
 namespace Poc.MobileApp.Domain.Queries.Pessoa

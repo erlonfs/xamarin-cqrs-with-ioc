@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Poc.MobileApp.Domain\Poc.MobileApp.Domain.csproj" />
+    <ProjectReference Include="..\Poc.MobileApp.Shared\Poc.MobileApp.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

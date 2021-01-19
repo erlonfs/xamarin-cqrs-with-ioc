@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Poc.MobileApp.Domain.Queries
+namespace Poc.MobileApp.Shared.Data
 {
 	public class QueryPaginada<T>
 	{

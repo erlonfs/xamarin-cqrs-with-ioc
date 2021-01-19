@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Poc.MobileApp.Domain.Queries
+namespace Poc.MobileApp.Shared.Cqrs
 {
 	public interface IQueryExecutor
 	{

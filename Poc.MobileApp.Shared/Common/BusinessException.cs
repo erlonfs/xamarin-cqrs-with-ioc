@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Poc.MobileApp.Domain
+namespace Poc.MobileApp.Shared.Common
 {
 	public class BusinessException : Exception
 	{

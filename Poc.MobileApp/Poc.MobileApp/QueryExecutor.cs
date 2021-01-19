@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using Poc.MobileApp.Domain.Queries;
+using Poc.MobileApp.Shared.Cqrs;
 using System;
 using System.Threading.Tasks;
 
