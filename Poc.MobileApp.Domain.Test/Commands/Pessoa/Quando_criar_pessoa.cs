@@ -44,7 +44,6 @@ namespace Poc.MobileApp.Domain.Test.Commands.Pessoa
 
 			_pessoaCallBack.Nome.Should().Be(_nome);
 			_pessoaCallBack.Cpf.Should().Be(_cpf);
-			_pessoaCallBack.DataCriacao.Date.Should().Be(DateTime.Today);
 			_pessoaCallBack.EntityId.Should().Be(_entityId);
 
 		}
