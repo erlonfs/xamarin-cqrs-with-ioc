@@ -4,6 +4,9 @@ namespace Poc.MobileApp.Shared.Data
 {
 	public class Entity<TId> : IEquatable<Entity<TId>>
 	{
+		public DateTime DataCriacao { get; set; }
+		public DateTime DataAlteracao { get; set; }
+
 		private TId _entityId;
 
 		protected Entity()

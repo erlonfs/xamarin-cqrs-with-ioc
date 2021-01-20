@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Poc.MobileApp.Infra.EF;
 using Poc.MobileApp.Shared.Common;
+using Poc.MobileApp.Shared.Data;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,6 +25,24 @@ namespace Poc.MobileApp.WebApi
 				{
 					try
 					{
+						var changedEntries = _dbContext.ChangeTracker.Entries().Where(x => x.State != EntityState.Unchanged).ToList();
+
+						foreach (var entry in changedEntries)
+						{
+							var entity = entry.Entity as Entity<Guid>;
+
+							switch (entry.State)
+							{
+								case EntityState.Modified:
+									entity.DataAlteracao = DateTime.Now;
+									break;
+								case EntityState.Added:
+									entity.DataCriacao = DateTime.Now;
+									entity.DataAlteracao = entity.DataCriacao;
+									break;
+							}
+						}
+
 						await _dbContext.SaveChangesAsync();
 
 						transaction.Commit();

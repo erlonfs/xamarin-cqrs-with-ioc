@@ -22,7 +22,6 @@ namespace Poc.MobileApp.Domain.Commands
 			{
 				EntityId = command.EntityId,
 				Nome = command.Nome,
-				DataCriacao = command.DataCriacao,
 				Cpf = command.Cpf
 			};
 

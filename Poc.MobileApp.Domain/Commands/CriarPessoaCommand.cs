@@ -8,7 +8,6 @@ namespace Poc.MobileApp.Domain.Commands
 		public Guid EntityId { get; }
 		public string Nome { get; }
 		public string Cpf { get; }
-		public DateTime DataCriacao { get; }
 
 		public CriarPessoaCommand(Guid entityId, string nome, string cpf)
 		{
@@ -18,7 +17,6 @@ namespace Poc.MobileApp.Domain.Commands
 			EntityId = entityId;
 			Nome = nome;
 			Cpf = cpf;
-			DataCriacao = DateTime.Now;
 		}
 	}
 }
