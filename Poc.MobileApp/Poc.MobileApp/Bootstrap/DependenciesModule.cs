@@ -1,11 +1,15 @@
 ﻿using Autofac;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Poc.MobileApp.Core.Services;
 using Poc.MobileApp.Domain;
 using Poc.MobileApp.Domain.Repositories;
+using Poc.MobileApp.Domain.Services;
 using Poc.MobileApp.Infra.Dapper;
 using Poc.MobileApp.Infra.EF;
 using Poc.MobileApp.Infra.EF.Repositories.Pessoas;
+using Poc.MobileApp.Infra.EF.Services;
+using Poc.MobileApp.Infra.Http.Services;
 using Poc.MobileApp.Shared.Common;
 using Poc.MobileApp.Shared.Cqrs;
 using Xamarin.Forms;
@@ -20,7 +24,10 @@ namespace Poc.MobileApp
 			builder.RegisterType<QueryExecutor>().As<IQueryExecutor>();
 			builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
 
+			builder.RegisterType<SincronizacaoRepository>().As<ISincronizacaoRepository>();
 			builder.RegisterType<PessoaRepository>().As<IPessoaRepository>();
+			builder.RegisterType<SincronizacaoServidorService>().As<ISincronizacaoServidorService>();
+			builder.RegisterType<SincronizacaoClienteService>().As<ISincronizacaoClienteService>();
 
 			builder.RegisterAssemblyTypes(typeof(Qux).Assembly)
 							.AsClosedTypesOf(typeof(ICommandHandler<>))

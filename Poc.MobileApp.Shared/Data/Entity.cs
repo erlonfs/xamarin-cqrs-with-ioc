@@ -2,21 +2,21 @@
 
 namespace Poc.MobileApp.Shared.Data
 {
-	public class Entity<TId> : IEquatable<Entity<TId>>
+	public class Entity : IEquatable<Entity>
 	{
 		public DateTime DataCriacao { get; set; }
 		public DateTime DataAlteracao { get; set; }
 
-		private TId _entityId;
+		private Guid _entityId;
 
 		protected Entity()
 		{
 
 		}
 
-		protected Entity(TId entityId)
+		protected Entity(Guid entityId)
 		{
-			if (Equals(entityId, default(TId)))
+			if (Equals(entityId, default(Guid)))
 			{
 				throw new ArgumentException("The ID cannot be the default value.", "id");
 			}
@@ -24,7 +24,7 @@ namespace Poc.MobileApp.Shared.Data
 			_entityId = entityId;
 		}
 
-		public TId EntityId
+		public Guid EntityId
 		{
 			get { return _entityId; }
 			set { _entityId = value; }
@@ -32,7 +32,7 @@ namespace Poc.MobileApp.Shared.Data
 
 		public override bool Equals(object obj)
 		{
-			var entity = obj as Entity<TId>;
+			var entity = obj as Entity;
 			if (entity != null)
 			{
 				return Equals(entity);
@@ -45,7 +45,7 @@ namespace Poc.MobileApp.Shared.Data
 			return EntityId.GetHashCode();
 		}
 
-		public bool Equals(Entity<TId> other)
+		public bool Equals(Entity other)
 		{
 			if (other == null)
 			{

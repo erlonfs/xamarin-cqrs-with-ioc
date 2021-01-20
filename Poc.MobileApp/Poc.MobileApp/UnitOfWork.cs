@@ -29,7 +29,9 @@ namespace Poc.MobileApp
 
 						foreach (var entry in changedEntries)
 						{
-							var entity = entry.Entity as Entity<Guid>;
+							var entity = entry.Entity as Entity;
+
+							if (entity is null) continue;
 
 							switch (entry.State)
 							{

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Poc.MobileApp.Infra.EF.Repositories
 {
-	public class Repository<TEntity> where TEntity : Entity<Guid>
+	public class Repository<TEntity> where TEntity : Entity
 	{
 		private DbSet<TEntity> _dbSet;
 
@@ -43,6 +43,11 @@ namespace Poc.MobileApp.Infra.EF.Repositories
 		public async Task<IEnumerable<TEntity>> GetAllAsync()
 		{
 			return await _dbSet.ToListAsync();
+		}
+
+		public async Task<IEnumerable<TEntity>> GetAllAfterDateAsync(DateTime date)
+		{
+			return await _dbSet.Where(x => x.DataAlteracao > date).ToListAsync();
 		}
 	}
 }

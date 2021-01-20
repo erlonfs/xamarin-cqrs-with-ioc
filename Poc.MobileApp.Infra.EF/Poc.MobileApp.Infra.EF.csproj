@@ -17,8 +17,4 @@
     <ProjectReference Include="..\Poc.MobileApp.Shared\Poc.MobileApp.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mappings\" />
-  </ItemGroup>
-
 </Project>

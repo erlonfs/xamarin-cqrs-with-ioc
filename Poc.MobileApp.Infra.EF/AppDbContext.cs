@@ -7,6 +7,7 @@ namespace Poc.MobileApp.Infra.EF
 	public class AppDbContext : DbContext
 	{
 		public DbSet<Pessoa> Pessoa { get; set; }
+		public DbSet<Sincronizacao> Sincronizacao { get; set; }
 
 		public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
 		{

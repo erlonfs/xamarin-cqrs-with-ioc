@@ -10,5 +10,6 @@ namespace Poc.MobileApp.Shared.Data
 		Task RemoveAsync(T entity);
 		Task<T> GetByEntityIdAsync(Guid entityId);
 		Task<IEnumerable<T>> GetAllAsync();
+		Task<IEnumerable<T>> GetAllAfterDateAsync(DateTime date);
 	}
 }

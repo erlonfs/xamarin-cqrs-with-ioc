@@ -22,6 +22,7 @@
     <ProjectReference Include="..\..\Poc.MobileApp.Domain\Poc.MobileApp.Domain.csproj" />
     <ProjectReference Include="..\..\Poc.MobileApp.Infra.Dapper\Poc.MobileApp.Infra.Dapper.csproj" />
     <ProjectReference Include="..\..\Poc.MobileApp.Infra.EF\Poc.MobileApp.Infra.EF.csproj" />
+    <ProjectReference Include="..\..\Poc.MobileApp.Infra.Http\Poc.MobileApp.Infra.Http.csproj" />
   </ItemGroup>
 
   <ItemGroup>

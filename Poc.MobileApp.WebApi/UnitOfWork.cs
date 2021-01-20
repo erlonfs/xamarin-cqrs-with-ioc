@@ -29,7 +29,7 @@ namespace Poc.MobileApp.WebApi
 
 						foreach (var entry in changedEntries)
 						{
-							var entity = entry.Entity as Entity<Guid>;
+							var entity = entry.Entity as Entity;
 
 							switch (entry.State)
 							{

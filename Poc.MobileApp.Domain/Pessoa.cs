@@ -1,9 +1,8 @@
 ﻿using Poc.MobileApp.Shared.Data;
-using System;
 
 namespace Poc.MobileApp.Domain
 {
-	public class Pessoa : Entity<Guid>
+	public class Pessoa : Entity
 	{
 		public int Id { get; set; }
 		public string Nome { get; set; }

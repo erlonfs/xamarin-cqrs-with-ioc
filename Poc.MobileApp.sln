@@ -23,11 +23,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{994F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domain", "domain", "{5E26191A-9629-422B-8168-8C8E8F484401}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poc.MobileApp.WebApi", "Poc.MobileApp.WebApi\Poc.MobileApp.WebApi.csproj", "{209C48B4-1D3B-4978-8DF6-BC5F5BA6D48B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poc.MobileApp.WebApi", "Poc.MobileApp.WebApi\Poc.MobileApp.WebApi.csproj", "{209C48B4-1D3B-4978-8DF6-BC5F5BA6D48B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{EF27D589-F25D-42CE-B04C-70AAEC250CC7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{C3A03C43-8DC1-4466-A808-1823FD40C541}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poc.MobileApp.Infra.Http", "Poc.MobileApp.Infra.Http\Poc.MobileApp.Infra.Http.csproj", "{CAE8720D-B67C-4B3E-900D-307A0D9D153D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{209C48B4-1D3B-4978-8DF6-BC5F5BA6D48B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{209C48B4-1D3B-4978-8DF6-BC5F5BA6D48B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{209C48B4-1D3B-4978-8DF6-BC5F5BA6D48B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAE8720D-B67C-4B3E-900D-307A0D9D153D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAE8720D-B67C-4B3E-900D-307A0D9D153D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAE8720D-B67C-4B3E-900D-307A0D9D153D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAE8720D-B67C-4B3E-900D-307A0D9D153D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +90,7 @@ Global
 		{D9B27DBF-4121-42B3-9F47-2C9328799C91} = {5E26191A-9629-422B-8168-8C8E8F484401}
 		{BA5C9968-98E6-4208-BA95-E25E96D973FB} = {EF27D589-F25D-42CE-B04C-70AAEC250CC7}
 		{209C48B4-1D3B-4978-8DF6-BC5F5BA6D48B} = {994F80A3-08A7-4AB1-971F-C4E010213F5A}
+		{CAE8720D-B67C-4B3E-900D-307A0D9D153D} = {C3A03C43-8DC1-4466-A808-1823FD40C541}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {720483EB-8477-4A38-8EA6-A13203C22CA4}
