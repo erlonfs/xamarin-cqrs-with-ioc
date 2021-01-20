@@ -7,7 +7,7 @@ namespace Poc.MobileApp.Domain.Services
 {
 	public interface ISincronizacaoServidorService
 	{
-		Task<IEnumerable<Entity>> Read(DateTime ultimaSincronizacao);
+		Task<IEnumerable<TEntity>> Read<TEntity>(DateTime ultimaSincronizacao) where TEntity : Entity;
 		Task Write(IEnumerable<Entity> entity);
 	}
 }

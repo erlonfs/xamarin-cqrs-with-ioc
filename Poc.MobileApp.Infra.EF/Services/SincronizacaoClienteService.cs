@@ -34,7 +34,7 @@ namespace Poc.MobileApp.Infra.EF.Services
 
 			var dataInicio = DateTime.Now;
 
-			var itensNaoSincronizadosDoServer = await _sincronizacaoServidorService.Read(dataUltimaSincronizacao);
+			var itensNaoSincronizadosDoServer = await _sincronizacaoServidorService.Read<Pessoa>(dataUltimaSincronizacao);
 
 
 			foreach (var entity in itensNaoSincronizadosDoServer)

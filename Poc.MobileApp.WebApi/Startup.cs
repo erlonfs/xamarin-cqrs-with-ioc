@@ -115,7 +115,7 @@ namespace Poc.MobileApp.WebApi
 
 			var conn = new SqlConnection(cnn);
 
-			builder.Register(c => new WebApiAppConnection(conn)).As<AppConnection>().SingleInstance();
+			builder.Register(c => new WebApiAppConnection(conn)).As<AppConnection>().InstancePerLifetimeScope();
 
 
 		}

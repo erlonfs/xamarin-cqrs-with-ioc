@@ -1,6 +1,8 @@
-﻿namespace Poc.MobileApp.Domain
+﻿using Poc.MobileApp.Shared.Data;
+
+namespace Poc.MobileApp.Domain
 {
-	public class Produto
+	public class Produto : Entity
 	{
 		public string Nome { get; }
 		public string Descricao { get; }
